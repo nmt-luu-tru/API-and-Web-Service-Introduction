@@ -1,4 +1,4 @@
-[source: https://funix.udemy.com/course/api-and-web-service-introduction/learn/lecture/11557490#overview]
+[source (use fu email): https://udemy.com/course/api-and-web-service-introduction/learn/lecture/11557490#overview] 
 ### Understanding REST API Calls Through a Practical Example
 
 Let’s dive into a practical example of how REST API calls work by exploring the process of interacting with the eBay Developers Program. Using RESTful APIs, we will make requests to the eBay sandbox environment, which is a test instance designed to allow developers to interact with eBay’s services without affecting live data.
