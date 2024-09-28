@@ -1,64 +1,106 @@
-### Authentication vs Authorization in the API World
+### Understanding the Difference between Authentication and Authorization  
+**Hiểu Sự Khác Biệt Giữa Xác Thực và Phân Quyền**
 
-When working with APIs, two terms often come up repeatedly: **Authentication** and **Authorization**. (*Khi làm việc với API, hai thuật ngữ thường xuất hiện liên tục là **Xác thực** và **Phân quyền**.*) Understanding the difference between these two concepts is crucial because they dictate how users interact with resources and data. (*Việc hiểu sự khác biệt giữa hai khái niệm này là điều cực kỳ quan trọng vì chúng quyết định cách người dùng tương tác với tài nguyên và dữ liệu.*)
+In the world of **APIs** (Application Programming Interfaces), it's crucial to understand the difference between **authentication** and **authorization**. These terms often come up together, but they serve different purposes. Let's break down each term for better clarity.
 
-Let’s break them down: (*Hãy phân tích kỹ hơn:*)
+[Trong thế giới của **API** (Giao diện Lập trình Ứng dụng), việc hiểu sự khác biệt giữa **xác thực** và **phân quyền** là rất quan trọng. Các thuật ngữ này thường xuất hiện cùng nhau, nhưng chúng có mục đích khác nhau. Hãy cùng tìm hiểu từng thuật ngữ để có cái nhìn rõ hơn.]
 
-#### **Authentication: Proving Your Identity** (*Xác thực: Chứng minh danh tính của bạn*)
-- **Definition**: Authentication is the process of verifying your identity using credentials such as a username and password. (*Định nghĩa: Xác thực là quá trình xác minh danh tính của bạn bằng cách sử dụng thông tin đăng nhập như tên người dùng và mật khẩu.*)
-- **Purpose**: It answers the question, “Who are you?” (*Mục đích: Nó trả lời câu hỏi, "Bạn là ai?"*)
-- **Example**: When you log into your email with your username and password, you’re using authentication to prove your identity. (*Ví dụ: Khi bạn đăng nhập vào email của mình bằng tên người dùng và mật khẩu, bạn đang sử dụng xác thực để chứng minh danh tính của mình.*)
-Once authenticated, you can access all your email resources. (*Sau khi được xác thực, bạn có thể truy cập tất cả các tài nguyên email của mình.*)
+---
 
-#### **Authorization: Controlling Access to Resources** (*Phân quyền: Kiểm soát quyền truy cập vào tài nguyên*)
-- **Definition**: Authorization is the process of granting or restricting access to resources based on the authenticated identity. (*Định nghĩa: Phân quyền là quá trình cấp hoặc hạn chế quyền truy cập vào các tài nguyên dựa trên danh tính đã được xác thực.*)
-- **Purpose**: It answers the question, “What are you allowed to do?” or “Which resources can you access?” (*Mục đích: Nó trả lời câu hỏi, "Bạn được phép làm gì?" hoặc "Bạn có thể truy cập vào tài nguyên nào?"*)
-- **Example**: Let’s say you have photos on a website like `myphotos.com` that are categorized into private and public folders. (*Ví dụ: Giả sử bạn có ảnh trên một trang web như `myphotos.com` và được phân loại thành thư mục riêng tư và công khai.*) While you have access to all folders, others are only authorized to view photos in the public folder, restricting access to your private content. (*Mặc dù bạn có quyền truy cập tất cả các thư mục, những người khác chỉ được phép xem ảnh trong thư mục công khai, hạn chế quyền truy cập vào nội dung riêng tư của bạn.*)
+### 1. What is Authentication?  
+1. Xác Thực Là Gì?
 
-### Examples in the API Context (*Các ví dụ trong ngữ cảnh API*)
+**Authentication** is the process of proving your identity using **credentials**, such as a username and password. For example, when you log into your email account, you provide a username and password. By doing so, you are **authenticated** and gain access to all the resources available in your account.
 
-Now that we understand the basic definitions, let’s look at some common examples of authentication and authorization mechanisms in the API world: (*Bây giờ chúng ta đã hiểu các định nghĩa cơ bản, hãy cùng xem một số ví dụ phổ biến về cơ chế xác thực và phân quyền trong thế giới API:*)
+[Xác thực là quá trình chứng minh danh tính của bạn bằng cách sử dụng **thông tin xác thực**, chẳng hạn như tên đăng nhập và mật khẩu. Ví dụ, khi bạn đăng nhập vào tài khoản email của mình, bạn cung cấp tên đăng nhập và mật khẩu. Bằng cách này, bạn đã được **xác thực** và có quyền truy cập tất cả các tài nguyên có sẵn trong tài khoản của mình.]
 
-1. **No Authentication / No Authorization** (*Không xác thực / Không phân quyền*)
-   - **Description**: No identity verification or resource limitation is involved. (*Mô tả: Không liên quan đến việc xác minh danh tính hoặc hạn chế tài nguyên.*)
-   - **Example**: Google’s search page. When you perform a search, the API does not verify who you are or restrict the results based on any authorization. (*Ví dụ: Trang tìm kiếm của Google. Khi bạn thực hiện tìm kiếm, API không xác minh bạn là ai hay hạn chế kết quả dựa trên bất kỳ sự phân quyền nào.*)
-   - **Use Case**: Public APIs or resources where identity and access control are not needed. (*Trường hợp sử dụng: API công khai hoặc các tài nguyên không cần xác minh danh tính và kiểm soát quyền truy cập.*)
+**Example**: Using a username and password to log into an email account.  
+[Ví dụ: Sử dụng tên đăng nhập và mật khẩu để đăng nhập vào tài khoản email.]
 
-2. **Basic Authentication** (*Xác thực cơ bản*)
-   - **Description**: A straightforward mechanism where a user provides credentials (username and password) to access resources. (*Mô tả: Cơ chế đơn giản trong đó người dùng cung cấp thông tin đăng nhập (tên người dùng và mật khẩu) để truy cập tài nguyên.*)
-   - **Example**: Email services. You use your credentials to log in and get access to all your emails without any further restrictions. (*Ví dụ: Dịch vụ email. Bạn sử dụng thông tin đăng nhập của mình để đăng nhập và truy cập tất cả email mà không có bất kỳ hạn chế bổ sung nào.*)
-   - **Use Case**: Services where simple identity verification is needed, and once verified, all resources are available without further restrictions. (*Trường hợp sử dụng: Các dịch vụ cần xác minh danh tính đơn giản và khi đã xác minh, tất cả tài nguyên đều có sẵn mà không cần thêm bất kỳ hạn chế nào.*)
+---
 
-3. **Bearer Token** (*Mã thông báo Bearer*)
-   - **Description**: A token is used to gain authorized access to certain resources without verifying the identity. (*Mô tả: Mã thông báo được sử dụng để có quyền truy cập hợp lệ vào một số tài nguyên mà không cần xác minh danh tính.*)
-   - **Example**: An API provides access to a set of photos in a public folder using a bearer token. Anyone with that token can view the photos, but there’s no verification of *who* is using the token. (*Ví dụ: Một API cung cấp quyền truy cập vào một tập hợp các ảnh trong thư mục công khai bằng mã thông báo bearer. Bất kỳ ai có mã thông báo đó đều có thể xem ảnh, nhưng không có xác minh *ai* đang sử dụng mã thông báo.*)
-   - **Security Issue**: Since there’s no authentication, it’s difficult to track who is accessing the resources, which may lead to misuse. (*Vấn đề bảo mật: Vì không có xác thực, nên rất khó để theo dõi ai đang truy cập tài nguyên, điều này có thể dẫn đến lạm dụng.*)
-   - **Use Case**: Temporary access to shared resources, but not recommended for sensitive data. (*Trường hợp sử dụng: Quyền truy cập tạm thời vào tài nguyên được chia sẻ, nhưng không được khuyến nghị cho dữ liệu nhạy cảm.*)
+### 2. What is Authorization?  
+2. Phân Quyền Là Gì?
 
-4. **OAuth (Open Authorization)** (*OAuth - Phân quyền Mở*)
-   - **Description**: OAuth allows one application or service to access limited resources on behalf of another user or application. (*Mô tả: OAuth cho phép một ứng dụng hoặc dịch vụ truy cập các tài nguyên hạn chế thay mặt cho người dùng hoặc ứng dụng khác.*)
-   - **Example**: Let’s say you want to allow an app like Waze to access your location on your cell phone. You need to be authenticated on your device and then explicitly grant Waze permission to use only your location information while keeping other resources (messages, photos, emails) inaccessible. (*Ví dụ: Giả sử bạn muốn cho phép một ứng dụng như Waze truy cập vào vị trí của bạn trên điện thoại di động. Bạn cần được xác thực trên thiết bị của mình và sau đó cấp phép cho Waze sử dụng thông tin vị trí của bạn trong khi các tài nguyên khác (tin nhắn, ảnh, email) vẫn không thể truy cập được.*)
-   - **Use Case**: Commonly used in scenarios where apps need specific access to a user’s resources without revealing their password (e.g., logging in with Google or Facebook credentials). (*Trường hợp sử dụng: Thường được sử dụng trong các trường hợp ứng dụng cần quyền truy cập cụ thể vào tài nguyên của người dùng mà không tiết lộ mật khẩu của họ (ví dụ: đăng nhập bằng thông tin đăng nhập Google hoặc Facebook).*)
+**Authorization** is the process of determining what resources a user is allowed to access. It has nothing to do with proving your identity but focuses on the **level of access** you are granted. For example, you may have photos on a fictional website called myphotos.com. Some of these photos are in a private folder, while others are in a public folder. You only want to give access to the photos in your public folder to other users. Thus, other users are **authorized** to view only the public photos.
 
-5. **Two-Factor Authentication (2FA)** (*Xác thực Hai Yếu Tố - 2FA*)
-   - **Description**: A more secure authentication mechanism that requires two different credentials to log in. (*Mô tả: Một cơ chế xác thực bảo mật hơn yêu cầu hai thông tin đăng nhập khác nhau để đăng nhập.*)
-   - **Example**: Logging into your bank account involves providing your username and password (first factor) and then entering a code sent to your phone or using a hardware token (second factor). (*Ví dụ: Đăng nhập vào tài khoản ngân hàng của bạn bao gồm việc cung cấp tên người dùng và mật khẩu (yếu tố thứ nhất) và sau đó nhập mã được gửi đến điện thoại của bạn hoặc sử dụng mã phần cứng (yếu tố thứ hai).*)
-   - **Use Case**: High-security environments such as banking, government services, or sensitive data management. (*Trường hợp sử dụng: Môi trường có yêu cầu bảo mật cao như ngân hàng, dịch vụ chính phủ hoặc quản lý dữ liệu nhạy cảm.*)
+[Phân quyền là quá trình xác định người dùng được phép truy cập vào những tài nguyên nào. Nó không liên quan đến việc chứng minh danh tính của bạn mà tập trung vào **mức độ truy cập** mà bạn được cấp. Ví dụ, bạn có một số bức ảnh trên một trang web giả định tên là myphotos.com. Một số bức ảnh này nằm trong thư mục riêng tư, trong khi số khác nằm trong thư mục công khai. Bạn chỉ muốn cho phép người dùng khác truy cập vào các bức ảnh trong thư mục công khai. Vì vậy, người dùng khác chỉ được **phân quyền** để xem các bức ảnh công khai.]
 
-### Quick Recap: Authentication vs Authorization (*Tóm tắt nhanh: Xác thực và Phân quyền*)
+**Example**: Giving users access only to the public photos in your account.  
+[Ví dụ: Cho phép người dùng chỉ truy cập vào các bức ảnh công khai trong tài khoản của bạn.]
 
-- **Authentication**: (*Xác thực:*)
-  - Proves your identity. (*Chứng minh danh tính của bạn.*)
-  - Examples: Username/Password, Biometrics (fingerprint or facial recognition), Two-Factor Authentication. (*Ví dụ: Tên người dùng/Mật khẩu, Sinh trắc học (dấu vân tay hoặc nhận dạng khuôn mặt), Xác thực hai yếu tố.*)
-  
-- **Authorization**: (*Phân quyền:*)
-  - Controls what resources you have access to. (*Kiểm soát những tài nguyên
+---
 
- nào bạn có quyền truy cập.*)
-  - Examples: Permission levels for files or folders, restricting actions (read, write, delete) you can perform. (*Ví dụ: Quyền truy cập chỉ để xem một số tệp hoặc thư mục nhất định, hạn chế các hành động (đọc, ghi, xóa) mà bạn có thể thực hiện.*)
+### 3. Types of Authentication and Authorization in APIs  
+3. Các Loại Xác Thực và Phân Quyền Trong API
 
-### Final Thoughts (*Tư duy cuối cùng*)
+Let's explore different types of **authentication** and **authorization** used in the API world, with real-life examples to illustrate their usage.
 
-When working with APIs, always ensure you’re using the right type of authentication and authorization mechanisms depending on your use case. (*Khi làm việc với API, hãy luôn đảm bảo rằng bạn đang sử dụng đúng loại cơ chế xác thực và phân quyền tùy theo trường hợp sử dụng của mình.*) In some scenarios, a combination of both is required (e.g., OAuth). (*Trong một số trường hợp, sự kết hợp của cả hai là cần thiết (ví dụ: OAuth).*)
+[Hãy cùng khám phá các loại **xác thực** và **phân quyền** khác nhau được sử dụng trong thế giới **API**, cùng với các ví dụ thực tế để minh họa cách sử dụng của chúng.]
 
-Understanding the difference helps you secure your APIs and provide a better user experience. (*Việc hiểu rõ sự khác biệt giúp bạn bảo mật API của mình và cung cấp trải nghiệm người dùng tốt hơn.*)
+#### 3.1 No Authentication  
+3.1 Không Xác Thực
+
+In this scenario, there is **no authentication** and **no authorization** involved. The user can access all resources without restrictions. An example of this is the Google search page. When you enter a search term like “tuna,” Google provides you with all search results without verifying your identity or limiting your access.
+
+[Trong trường hợp này, không có **xác thực** và **phân quyền** nào được thực hiện. Người dùng có thể truy cập tất cả các tài nguyên mà không bị giới hạn. Ví dụ về trường hợp này là trang tìm kiếm Google. Khi bạn nhập một cụm từ tìm kiếm như “cá ngừ,” Google cung cấp cho bạn tất cả các kết quả tìm kiếm mà không cần xác minh danh tính hay hạn chế quyền truy cập của bạn.]
+
+**Example**: Google Search.  
+[Ví dụ: Tìm kiếm Google.]
+
+#### 3.2 Basic Authentication  
+3.2 Xác Thực Cơ Bản
+
+This involves using credentials such as a **username** and **password** to access full resources without any restrictions. There is **authentication**, but no **authorization**. An example is logging into your email account. Once authenticated, you gain full access to your email without any limitations.
+
+[Đây là quá trình sử dụng **thông tin xác thực** như **tên đăng nhập** và **mật khẩu** để truy cập đầy đủ tài nguyên mà không có bất kỳ giới hạn nào. Có **xác thực**, nhưng không có **phân quyền**. Ví dụ, khi đăng nhập vào tài khoản email của mình, sau khi được **xác thực**, bạn có quyền truy cập đầy đủ vào email mà không bị hạn chế.]
+
+**Example**: Logging into your email account using a username and password.  
+[Ví dụ: Đăng nhập vào tài khoản email bằng cách sử dụng tên đăng nhập và mật khẩu.]
+
+#### 3.3 Bearer Token  
+3.3 Mã Thông Báo Bearer
+
+With a **bearer token**, **authorization** is granted based on the possession of a token. This token grants access to specific resources without requiring the user to prove their identity. For instance, you can give someone access to your public photos using a bearer token. The issue with this method is that anyone with the token can access your resources, which raises security concerns.
+
+[Với **mã thông báo Bearer**, việc **phân quyền** được thực hiện dựa trên việc sở hữu mã thông báo. Mã thông báo này cho phép truy cập vào các tài nguyên cụ thể mà không yêu cầu người dùng chứng minh danh tính. Ví dụ, bạn có thể cho phép ai đó truy cập vào các bức ảnh công khai của mình bằng cách sử dụng mã thông báo Bearer. Vấn đề với phương pháp này là bất kỳ ai có mã thông báo đều có thể truy cập tài nguyên của bạn, điều này làm tăng lo ngại về **bảo mật**.]
+
+**Example**: Using a bearer token to access photos in a public folder.  
+[Ví dụ: Sử dụng mã thông báo Bearer để truy cập vào các bức ảnh trong thư mục công khai.]
+
+#### 3.4 OAuth (Open Authorization)  
+3.4 OAuth (Phân Quyền Mở)
+
+**OAuth** is a more secure form of **authorization**. It involves both **authentication** and **authorization**. You can grant a third-party app limited access to specific resources without giving them full access to your account. For example, when using the Waze app for directions, you allow the app to access only your location while restricting access to other resources like messages or photos.
+
+[**OAuth** là một hình thức **phân quyền** an toàn hơn. Nó bao gồm cả **xác thực** và **phân quyền**. Bạn có thể cho phép một ứng dụng bên thứ ba truy cập hạn chế vào các tài nguyên cụ thể mà không cung cấp quyền truy cập đầy đủ vào tài khoản của mình. Ví dụ, khi sử dụng ứng dụng Waze để chỉ đường, bạn chỉ cho phép ứng dụng này truy cập **vị trí** của mình, trong khi hạn chế quyền truy cập vào các tài nguyên khác như tin nhắn hoặc ảnh.]
+
+**Example**: Allowing the Waze app to access only your location for navigation.  
+[Ví dụ: Cho phép ứng dụng Waze chỉ truy cập vị trí của bạn để chỉ đường.]
+
+#### 3.5 Two-Factor Authentication (2FA)  
+3.5 Xác Thực Hai Yếu Tố (2FA)
+
+With **Two-Factor Authentication**, the user must log in using two different **credentials**. First, they enter their username and password. Then, they must provide a second form of **authentication**, such as a code from a physical device or an authentication app. This method is used for high-security environments like banking or government systems.
+
+[Với **Xác Thực Hai Yếu Tố**, người dùng phải đăng nhập bằng hai **thông tin xác thực** khác nhau. Đầu tiên, họ nhập **tên đăng nhập** và **mật khẩu**. Sau đó, họ phải cung cấp một hình thức xác thực thứ hai, chẳng hạn như mã từ thiết bị vật lý hoặc ứng dụng xác thực. Phương pháp này được sử dụng cho các môi trường có tính **bảo mật** cao như hệ thống **ngân hàng** hoặc **chính phủ**.]
+
+**Example**: Logging into a bank account using both a password and a code from a physical device.  
+[Ví dụ: Đăng nhập vào tài khoản ngân hàng bằng cách sử dụng cả mật khẩu và mã từ thiết bị vật lý.]
+
+---
+
+### 4. Summary  
+4. Tóm Lược
+
+Understanding the difference between **authentication** and **authorization** is crucial in API usage.
+
+[Hiểu sự khác biệt giữa **xác thực** và **phân quyền** là rất quan trọng trong việc sử dụng **API**.]
+
+- **Authentication**: Proving your identity using credentials.  
+[Xác thực: Chứng minh danh tính của bạn bằng cách sử dụng **
+
+thông tin xác thực**.]
+
+- **Authorization**: Granting limited access to specific resources.  
+[Phân quyền: Cấp quyền truy cập giới hạn vào các tài nguyên cụ thể.]
