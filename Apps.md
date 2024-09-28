@@ -1,95 +1,177 @@
-### Let's talk about apps.
+### Hiểu Về Ứng Dụng Di Động - Hướng Dẫn Toàn Diện  
+[Understanding Cell Phone Apps - A Comprehensive Guide]
 
-Why do you need to know about apps? *(Tại sao bạn cần biết về ứng dụng?)* I suppose you're curious. *(Tôi đoán là bạn thắc mắc.)* How do those apps, those circles on your cell phone, work? *(Những ứng dụng, những biểu tượng tròn tròn trên điện thoại của bạn hoạt động như thế nào?)* Well, this is the lecture where we're gonna explain how they work. *(Đây chính là bài giảng giải thích cho bạn cách chúng hoạt động.)*
+Trong tài liệu này, chúng ta sẽ tìm hiểu về các khái niệm cơ bản của ba loại ứng dụng di động: **ứng dụng gốc** (native), **ứng dụng web** (web) và **ứng dụng lai** (hybrid). Chúng tôi sẽ phân tích từng loại ứng dụng, giải thích **ưu điểm** và **nhược điểm** của chúng, và đưa ra các ví dụ để hiểu rõ hơn. Bên cạnh đó, chúng tôi cũng sẽ đề cập đến các **hệ điều hành** phổ biến và các **API** mà những hệ điều hành này cung cấp, điều này rất quan trọng trong việc phát triển các ứng dụng.
 
-#### The Three Types of Cell Phone Apps
+[In this document, we'll explore the basic concepts behind three types of cell phone apps: **native**, **web**, and **hybrid**. We’ll break down each app type, explain their **advantages** and **disadvantages**, and provide examples for better understanding. Additionally, we’ll cover common **operating systems** and the **APIs** that these operating systems offer, which are crucial for developing these apps.]
 
-What are they? *(Chúng là gì?)* There are **native** apps, **web** apps, and **hybrid** apps. *(Có ba loại ứng dụng: ứng dụng **native**, **web**, và **hybrid**.)*
+---
 
-So those little circles on your cell phone that you're looking at can be either a native app, a web app, or a hybrid app. *(Vì vậy, những biểu tượng tròn nhỏ trên điện thoại của bạn có thể là ứng dụng native, web hoặc hybrid.)*
+### 1. Các Loại Ứng Dụng Di Động  
+[1. Types of Cell Phone Apps]
 
-#### Native Apps
+Có ba loại ứng dụng chính:
 
-A native app runs on an operating system. *(Ứng dụng native chạy trên một hệ điều hành.)* And you may say, "Well, what am I talking about here, operating system?" *(Bạn có thể thắc mắc, “Vậy hệ điều hành là gì?”)*
+[There are three main types of apps:]
 
-An operating system is what makes your hardware work. *(Hệ điều hành là thứ giúp phần cứng hoạt động.)* For example, if you have a cell phone, that's just a piece of hardware. *(Ví dụ, nếu bạn có một chiếc điện thoại, nó chỉ là một phần cứng.)* You can't turn it on; you can't do anything with it. *(Bạn không thể bật nó lên, bạn không thể làm gì với nó.)*
+- **Ứng Dụng Gốc**  
+  [**Native Apps**]
 
-You have a computer, just a piece of hardware. *(Bạn có một chiếc máy tính, nó cũng chỉ là một phần cứng.)* You can't do anything with it either. *(Bạn cũng không thể làm gì với nó cả.)*
+- **Ứng Dụng Web**  
+  [**Web Apps**]
 
-So what makes it work? *(Vậy thứ gì khiến nó hoạt động?)*
+- **Ứng Dụng Lai**  
+  [**Hybrid Apps**]
 
-Well, between you and the hardware (for example, a cell phone or a computer), what gets between you and the hardware is the operating system. *(Thứ kết nối giữa bạn và phần cứng—chẳng hạn như một chiếc điện thoại hay máy tính—chính là hệ điều hành.)*
+Hãy cùng tìm hiểu sâu hơn về từng loại để hiểu cách chúng hoạt động.
 
-Okay, so this hardware is dead without the operating system, and the operating system is dead without you using it. *(Phần cứng này sẽ “chết” nếu không có hệ điều hành, và hệ điều hành cũng vô dụng nếu không có bạn sử dụng.)*
+[Now let’s dive into each one to understand how they work.]
 
-So this operating system is kind of like the middleman between you and the hardware. *(Hệ điều hành hoạt động như một người trung gian giữa bạn và phần cứng.)*
+---
 
-It's what makes the hardware work because a cell phone by itself, without an operating system, is useless. *(Nó làm cho phần cứng hoạt động vì bản thân điện thoại mà không có hệ điều hành thì vô dụng.)*
+### 2. Ứng Dụng Gốc  
+[2. Native Apps]
 
-A computer without an operating system is also useless. *(Máy tính mà không có hệ điều hành cũng vô dụng.)*
+Ứng dụng gốc được phát triển để chạy trên một **hệ điều hành** (OS) cụ thể như **Android** hoặc **iOS**. Mỗi hệ điều hành cung cấp một tập hợp các **API** (Giao Diện Lập Trình Ứng Dụng) mà ứng dụng có thể truy cập trực tiếp, mang lại hiệu suất tốt nhất và truy cập đầy đủ các tính năng của thiết bị.
 
-Once you put the operating system in the hardware, then it becomes what? An operating system. *(Một khi bạn đưa hệ điều hành vào phần cứng, nó sẽ trở thành gì? Trở thành một hệ điều hành.)*
+[A **native app** is developed to run on a specific **operating system** (OS) like **Android** or **iOS**. Each operating system provides a set of **APIs** (Application Programming Interfaces) that the app can access directly, giving it the best performance and access to all device features.]
 
-That's why they call it an "operating system." *(Đó là lý do họ gọi nó là “hệ điều hành.”)*
+#### 2.1 Ví Dụ Về Ứng Dụng Gốc  
+[2.1 Examples of Native Apps]
 
-#### Common Operating Systems
+Ví dụ về ứng dụng gốc bao gồm **Waze**, **Google Maps**, **Twitter**, và **Google Translate**. Mỗi ứng dụng sử dụng các API của hệ điều hành tương ứng để cung cấp các chức năng cụ thể. Ví dụ, **Waze** sử dụng **API vị trí** để xác định vị trí của bạn và đưa ra chỉ đường.
 
-Now, what are the most common operating systems? *(Vậy những hệ điều hành phổ biến nhất hiện nay là gì?)*
+[Examples of native apps include **Waze**, **Google Maps**, **Twitter**, and **Google Translate**. Each app uses the APIs of its respective operating system to provide specific functionalities. For instance, **Waze** uses the **location API** to determine your location and give you directions.]
 
-The most common operating systems are: *(Những hệ điều hành phổ biến nhất là:)*
+#### 2.2 Ưu Điểm và Nhược Điểm của Ứng Dụng Gốc  
+[2.2 Pros and Cons of Native Apps]
 
-- **Windows**  
-- **Mac OSX**: meaning the Apple operating system. *(Mac OSX: nghĩa là hệ điều hành của Apple.)* This X means version 10. *(Chữ X này có nghĩa là phiên bản 10.)* Once it got to version 10, they started calling it Mac Operating System X, for 10. *(Khi đến phiên bản 10, họ bắt đầu gọi nó là Mac Operating System X để chỉ số 10.)* 
-- **Linux**: another operating system used primarily for servers and big computations, not for personal computers. *(Linux: một hệ điều hành khác chủ yếu được sử dụng cho các máy chủ và các phép tính lớn, không dành cho máy tính cá nhân.)*
+- **Ưu điểm**  
+  [**Pros**]  
+  - Hiệu suất tốt nhất  
+  [Best performance]  
+  - Truy cập đầy đủ tất cả các tính năng của thiết bị  
+  [Full access to all device features]  
+  - Có khả năng hoạt động khi không có kết nối Internet  
+  [Ability to work offline]
 
-Now, there are also cell phone operating systems. *(Giờ đây, còn có các hệ điều hành trên điện thoại.)*
+- **Nhược điểm**  
+  [**Cons**]  
+  - Chi phí phát triển cao  
+  [High development cost]  
+  - Yêu cầu phát triển riêng cho từng hệ điều hành  
+  [Requires separate development for each OS]
 
-#### Cell Phone Operating Systems
+---
 
-Examples include: *(Các ví dụ bao gồm:)*
+### 3. Ứng Dụng Web  
+[3. Web Apps]
 
-- **Android**
-- **iOS**: which is the Apple iPhone operating system. *(iOS: hệ điều hành của iPhone.)* They used to call it the iPhone operating system, but now they just call it iOS for short. *(Trước đây họ gọi nó là hệ điều hành iPhone, nhưng bây giờ họ chỉ gọi tắt là iOS.)*
+Ứng dụng web không được cài đặt trên thiết bị mà chạy trong trình duyệt web như **Chrome**, **Firefox**, hoặc **Safari**. Chúng được xây dựng bằng các công nghệ web tiêu chuẩn như **HTML**, **CSS**, và **JavaScript**. Do được dựa trên trình duyệt, ứng dụng web không thể truy cập tất cả các tính năng của thiết bị.
 
-There are more operating systems out there, such as Blackberry, but who has a Blackberry anymore? *(Còn có những hệ điều hành khác như Blackberry, nhưng giờ ai còn sử dụng Blackberry nữa đâu?)*
+[**Web apps** are not installed on a device but run in a web browser like **Chrome**, **Firefox**, or **Safari**. They are built using standard web technologies like **HTML**, **CSS**, and **JavaScript**. Because they are browser-based, web apps cannot access all device features.]
 
-And Microsoft? Who's using a Microsoft operating system on a cell phone? *(Và Microsoft? Ai đang sử dụng hệ điều hành Microsoft trên điện thoại nữa chứ?)*
+#### 3.1 Đặc Điểm của Ứng Dụng Web  
+[3.1 Characteristics of Web Apps]
 
-If you put the Windows operating system on a computer, it looks like a Windows computer. *(Nếu bạn đưa hệ điều hành Windows vào một chiếc máy tính, nó sẽ giống như một chiếc máy tính Windows.)*
+Các ứng dụng web được thiết kế để tương thích với nhiều trình duyệt khác nhau, có nghĩa là bạn chỉ cần tạo chúng một lần và chúng sẽ hoạt động trên tất cả các thiết bị có trình duyệt. Điều này giúp giảm chi phí và thời gian phát triển.
 
-If you put Mac OS on a computer, it looks like an Apple computer. *(Nếu bạn đưa Mac OS vào máy tính, nó sẽ giống như một chiếc máy tính Apple.)*
+[Web apps are designed to be compatible with multiple browsers, meaning you only need to create them once, and they will work across all devices with a browser. This reduces development costs and time.]
 
-If you put Android on a cell phone, it looks like an Android phone. *(Nếu bạn đưa Android vào điện thoại, nó sẽ giống như một chiếc điện thoại Android.)*
+#### 3.2 Ưu Điểm và Nhược Điểm của Ứng Dụng Web  
+[3.2 Pros and Cons of Web Apps]
 
-If you put iOS on a cell phone, it looks like an Apple iPhone. *(Nếu bạn đưa iOS vào điện thoại, nó sẽ giống như một chiếc iPhone của Apple.)*
+- **Ưu điểm**  
+  [**Pros**]  
+  - Chi phí phát triển thấp  
+  [Low development cost]  
+  - Một phiên bản duy nhất hoạt động trên tất cả các thiết bị  
+  [Single version works across all devices]  
+  - Không yêu cầu cài đặt  
+  [No installation required]
 
-#### APIs on Operating Systems
+- **Nhược điểm**  
+  [**Cons**]  
+  - Không thể truy cập tất cả các tính năng của thiết bị  
+  [Cannot access all device features]  
+  - Yêu cầu kết nối Internet  
+  [Requires an internet connection]
 
-Each operating system has APIs on it. *(Mỗi hệ điều hành đều có các API.)* Maybe you don't realize this, but it has APIs. *(Có thể bạn chưa nhận ra, nhưng nó có các API.)*
+---
 
-For example, on your cell phone: *(Ví dụ, trên điện thoại của bạn:)*
+### 4. Ứng Dụng Lai  
+[4. Hybrid Apps]
 
-- **Vibrating** *(Rung)*
-- **Microphone** *(Micro)*
-- **Camera** *(Máy ảnh)*
-- **Location** *(Vị trí)*
-- **Calls** *(Cuộc gọi)*
-- **Speaker** *(Loa)*
-- **Touch screen** *(Màn hình cảm ứng)*
-- **Keyboard** *(Bàn phím)*
+Ứng dụng lai kết hợp các đặc điểm của cả ứng dụng gốc và ứng dụng web. Chúng được phát triển bằng các công nghệ web nhưng được đóng gói trong một khung gốc, cho phép chúng được cài đặt trên thiết bị và truy cập một số tính năng của thiết bị.
 
-These are low-level APIs, that is, very simple APIs. *(Đây là các API cấp thấp, tức là các API rất đơn giản.)*
+[**Hybrid apps** combine the features of both native and web apps. They are developed using web technologies but are wrapped in a native shell, allowing them to be installed on a device and access some of the device's features.]
 
-#### High-Level APIs
+#### 4.1 Đặc Điểm của Ứng Dụng Lai  
+[4.1 Characteristics of Hybrid Apps]
 
-In addition to these generally hardware APIs, you also have what's called high-level APIs. *(Ngoài các API phần cứng này, bạn còn có cái gọi là API cấp cao.)* 
+Các ứng dụng lai có thể được tải xuống từ các cửa hàng ứng dụng giống như ứng dụng gốc. Chúng có thể truy cập nhiều tính năng hơn so với ứng dụng web nhưng có thể không hoạt động tốt như ứng dụng gốc vì chúng vẫn dựa vào trình duyệt cho một số chức năng.
 
-These are a bit more complicated, such as: *(Chúng phức tạp hơn một chút, chẳng hạn như:)*
+[Hybrid apps can be downloaded from app stores like native apps. They can access more features than web apps but may not perform as well as native apps because they still rely on a browser for some functions.]
 
-- **Calendar** *(Lịch)*
-- **Push notifications** *(Thông báo đẩy)*
-- **Browser** *(Trình duyệt)*
-- **Email** *(Thư điện tử)*
-- **Contacts** *(Danh bạ)* 
+#### 4.2 Ưu Điểm và Nhược Điểm của Ứng Dụng Lai  
+[4.2 Pros and Cons of Hybrid Apps]
 
-The translation format with italicized and highlighted text can continue throughout the rest of the lecture as necessary.
+- **Ưu điểm**  
+  [**Pros**]  
+  - Chi phí thấp hơn so với ứng dụng gốc  
+  [Lower cost than native apps]  
+  - Một mã nguồn cho nhiều nền tảng  
+  [Single codebase for multiple platforms]
+
+- **Nhược điểm**  
+  [**Cons**]  
+  - Hiệu suất không tốt bằng ứng dụng gốc  
+  [Performance is not as good as native apps]  
+  - Có một số giới hạn trong việc truy cập các tính năng của thiết bị  
+  [Some limitations in accessing device features]
+
+---
+
+### 5. Các Hệ Điều Hành Phổ Biến và API  
+[5. Common Operating Systems and APIs]
+
+Để hiểu cách các loại ứng dụng này hoạt động, điều quan trọng là phải biết về các hệ điều hành và các API mà chúng cung cấp. Dưới đây là một số hệ điều hành phổ biến nhất dành cho thiết bị di động và các API mà chúng cung cấp:
+
+[To understand how these app types work, it’s important to know about the operating systems and the APIs they provide. Below are some of the most common operating systems for mobile devices and the APIs they offer:]
+
+#### 5.1. Android  
+[5.1. Android]
+
+- **Hệ Điều Hành**: Android là một hệ điều hành di động mã nguồn mở được phát triển bởi Google.  
+  [**Operating System**: Android is an open-source mobile operating system developed by Google.]  
+
+- **API**: Android cung cấp các API cho máy ảnh, vị trí, thông báo, cảm biến, và nhiều tính năng khác.  
+  [**APIs**: Android provides APIs for camera, location, notifications, sensors, and more.]
+
+**Ví dụ**: `Camera API` trong Android cho phép nhà phát triển truy cập vào máy ảnh của thiết bị để chụp ảnh và quay video.
+
+[**Example**: The `Camera API` in Android allows developers to access the device's camera to capture images and record
+
+ videos.]
+
+#### 5.2. iOS  
+[5.2. iOS]
+
+- **Hệ Điều Hành**: iOS là hệ điều hành độc quyền của Apple dành cho iPhone và iPad.  
+  [**Operating System**: iOS is Apple’s proprietary operating system for iPhones and iPads.]  
+
+- **API**: iOS cung cấp các API cho Siri, HealthKit, ARKit, HomeKit, và nhiều tính năng khác.  
+  [**APIs**: iOS offers APIs for Siri, HealthKit, ARKit, and HomeKit, among others.]
+
+**Ví dụ**: `ARKit API` cho phép nhà phát triển xây dựng các trải nghiệm thực tế tăng cường (AR) bằng cách kết hợp các yếu tố kỹ thuật số với thế giới thực.
+
+[**Example**: The `ARKit API` allows developers to build augmented reality (AR) experiences by combining digital elements with the real world.]
+
+---
+
+### 6. Kết Luận  
+[6. Conclusion]
+
+Hiểu về các loại ứng dụng khác nhau (gốc, web và lai), cùng với các hệ điều hành phổ biến và các API, sẽ cung cấp một nền tảng vững chắc để phát triển và lựa chọn loại ứng dụng phù hợp với nhu cầu của bạn.
+
+[Understanding the different types of apps (native, web, and hybrid), along with the common operating systems and APIs, provides a solid foundation for developing and choosing the right app type for your needs.]
