@@ -1,3 +1,4 @@
+https://(fu.)udemy.com/course/api-and-web-service-introduction/learn/lecture/13705026#overview  
 ### Tìm Hiểu Về **Bearer Token**
 
 **Bearer Token** là một thuật ngữ quan trọng khi làm việc với API, đặc biệt là trong các ứng dụng xác thực và ủy quyền hiện đại. Để hiểu rõ hơn về **Bearer Token**, chúng ta sẽ phân tích từng phần của cụm từ này.
